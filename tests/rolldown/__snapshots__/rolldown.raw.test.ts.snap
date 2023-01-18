@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`cross-fetch > bundles the original package > cjs 1`] = `"302.85KB"`;
+
+exports[`cross-fetch > bundles the original package > mjs 1`] = `"302.75KB"`;
+
+exports[`cross-fetch > unfills it > cjs 1`] = `"640B"`;
+
+exports[`cross-fetch > unfills it > mjs 1`] = `"175B"`;
+
+exports[`cross-fetch > unfills it > unfilled cjs code 1`] = `
+""use strict";function a(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t={exports:{}},s={exports:{}},o;function c(){return o||(o=1,function(e){const r=globalThis.fetch;globalThis.fetch.polyfill=!1,r.polyfill=!1,e.exports=r,Object.assign(e.exports,{fetch:r,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})}(s)),s.exports}var l;function p(){if(l)return t.exports;l=1;const e=c();return t.exports=()=>e("https://example.com"),t.exports.example=()=>e("https://example.com"),t.exports}var n=p(),h=a(n);module.exports=h;
+"
+`;
+
+exports[`cross-fetch > unfills it > unfilled mjs code 1`] = `
+"const l=globalThis.fetch;globalThis.fetch.polyfill=!1,l.polyfill=!1;var e=()=>l("https://example.com");const t=()=>l("https://example.com");export{e as default,t as example};
+"
+`;
+
+exports[`node-fetch > bundles the original package > cjs 1`] = `"91.89KB"`;
+
+exports[`node-fetch > bundles the original package > mjs 1`] = `"89.91KB"`;
+
+exports[`node-fetch > unfills it > cjs 1`] = `"640B"`;
+
+exports[`node-fetch > unfills it > mjs 1`] = `"175B"`;
+
+exports[`node-fetch > unfills it > unfilled cjs code 1`] = `
+""use strict";function a(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t={exports:{}},r={exports:{}},s;function n(){return s||(s=1,function(e){const o=globalThis.fetch;globalThis.fetch.polyfill=!1,o.polyfill=!1,e.exports=o,Object.assign(e.exports,{fetch:o,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})}(r)),r.exports}var l;function p(){if(l)return t.exports;l=1;const e=n();return t.exports=()=>e("https://example.com"),t.exports.example=()=>e("https://example.com"),t.exports}var c=p(),h=a(c);module.exports=h;
+"
+`;
+
+exports[`node-fetch > unfills it > unfilled mjs code 1`] = `
+"const l=globalThis.fetch;globalThis.fetch.polyfill=!1,l.polyfill=!1;var e=()=>l("https://example.com");const t=()=>l("https://example.com");export{e as default,t as example};
+"
+`;

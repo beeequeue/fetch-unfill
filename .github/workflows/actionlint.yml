@@ -1,0 +1,43 @@
+name: actionlint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+
+    env:
+      GO_VERSION: ~1.23
+      ACTIONLINT_VERSION: v1.7.7
+
+    steps:
+      # Set up Go so we can build actionlint from the source
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      # Cache it so we don't have to download it every time
+      - name: cache actionlint
+        uses: actions/cache@v4
+        id: cache
+        with:
+          path: /root/go/bin/actionlint
+          key: actionlint-${{ runner.os }}-${{ env.GO_VERSION }}-${{ env.ACTIONLINT_VERSION }}
+
+      # Install it from a GitHub link with commit hash, meaning we're building it from source from a known version
+      - name: install from source
+        if: ${{ !steps.cache.outputs.cache-hit }}
+        run: go install github.com/rhysd/actionlint/cmd/actionlint@${{ env.ACTIONLINT_VERSION }}
+
+      - uses: actions/checkout@v4
+
+      # Add matcher so we get annotations in PRs
+      - name: add matcher
+        run: echo "::add-matcher::.github/matchers/actionlint.json"
+
+      # Run it!
+      - name: lint workflow files
+        run: actionlint

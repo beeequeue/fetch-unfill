@@ -1,0 +1,32 @@
+{
+  "name": "@fetch-unfill/tests",
+  "type": "module",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "lint": "eslint",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "5.1.1",
+    "@rollup/plugin-commonjs": "28.0.3",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "16.0.1",
+    "@types/bytes": "3.1.5",
+    "@types/require-from-string": "1.2.3",
+    "bytes": "3.1.2",
+    "cross-fetch": "4.1.0",
+    "esbuild": "0.25.4",
+    "fetch-unfill": "workspace:*",
+    "memfs": "4.17.1",
+    "require-from-string": "2.0.2",
+    "rolldown": "1.0.0-beta.8-commit.d95f99e",
+    "rollup": "4.40.2",
+    "rollup-plugin-esbuild": "6.2.1",
+    "unplugin-fetch-unfill": "workspace:*",
+    "vitest": "3.1.3",
+    "webpack": "5.99.8",
+    "webpack-merge": "6.0.1"
+  }
+}

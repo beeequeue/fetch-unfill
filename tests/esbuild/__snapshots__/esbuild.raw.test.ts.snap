@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`cross-fetch > bundles the original package > cjs 1`] = `"302.03KB"`;
+
+exports[`cross-fetch > bundles the original package > mjs 1`] = `"302.72KB"`;
+
+exports[`cross-fetch > unfills it > cjs 1`] = `"452B"`;
+
+exports[`cross-fetch > unfills it > mjs 1`] = `"237B"`;
+
+exports[`cross-fetch > unfills it > unfilled cjs code 1`] = `
+""use strict";var r=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports);var o=r((p,s)=>{"use strict";var l=globalThis.fetch;globalThis.fetch.polyfill=!1;l.polyfill=!1;s.exports=l;Object.assign(s.exports,{fetch:l,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})});var t=o();module.exports=()=>t("https://example.com");module.exports.example=()=>t("https://example.com");
+"
+`;
+
+exports[`cross-fetch > unfills it > unfilled mjs code 1`] = `
+"var t=globalThis.fetch;globalThis.fetch.polyfill=!1;t.polyfill=!1;var e=t,{Request:l,Response:o,Headers:s,AbortController:p}=globalThis;var c=()=>e("https://example.com"),h=()=>e("https://example.com");export{c as default,h as example};
+"
+`;
+
+exports[`node-fetch > bundles the original package > cjs 1`] = `"92.2KB"`;
+
+exports[`node-fetch > bundles the original package > mjs 1`] = `"90.41KB"`;
+
+exports[`node-fetch > unfills it > cjs 1`] = `"452B"`;
+
+exports[`node-fetch > unfills it > mjs 1`] = `"237B"`;
+
+exports[`node-fetch > unfills it > unfilled cjs code 1`] = `
+""use strict";var r=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports);var o=r((p,s)=>{"use strict";var l=globalThis.fetch;globalThis.fetch.polyfill=!1;l.polyfill=!1;s.exports=l;Object.assign(s.exports,{fetch:l,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})});var t=o();module.exports=()=>t("https://example.com");module.exports.example=()=>t("https://example.com");
+"
+`;
+
+exports[`node-fetch > unfills it > unfilled mjs code 1`] = `
+"var t=globalThis.fetch;globalThis.fetch.polyfill=!1;t.polyfill=!1;var e=t,{Request:l,Response:o,Headers:s,AbortController:p}=globalThis;var c=()=>e("https://example.com"),h=()=>e("https://example.com");export{c as default,h as example};
+"
+`;

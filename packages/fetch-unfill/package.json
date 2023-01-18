@@ -1,0 +1,39 @@
+{
+  "name": "fetch-unfill",
+  "type": "module",
+  "description": "",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "beequeue <adam@haglund.dev>",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/beeequeue/tinywhich",
+    "directory": "./packages/fetch-unfill"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "lib",
+    "CHANGELOG.md"
+  ],
+  "main": "./lib/node.cjs",
+  "module": "./lib/node.mjs",
+  "browser": "./lib/index.mjs",
+  "types": "./lib/index.d.mts",
+  "exports": {
+    "require": {
+      "types": "./lib/index.d.mts",
+      "browser": "./lib/index.cjs",
+      "default": "./lib/node.cjs"
+    },
+    "default": {
+      "types": "./lib/index.d.mts",
+      "browser": "./lib/index.mjs",
+      "default": "./lib/node.mjs"
+    }
+  },
+  "scripts": {
+    "lint": "eslint"
+  }
+}

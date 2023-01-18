@@ -1,0 +1,45 @@
+{
+  "name": "unplugin-fetch-unfill",
+  "type": "module",
+  "description": "",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "beequeue <adam@haglund.dev>",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/beeequeue/tinywhich",
+    "directory": "./packages/unplugin-fetch-unfill"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "main": "./dist/plugin.cjs",
+  "module": "./dist/plugin.mjs",
+  "types": "./dist/plugin.d.mts",
+  "exports": {
+    "require": {
+      "browser": "./dist/plugin.cjs",
+      "default": "./dist/plugin.cjs"
+    },
+    "default": {
+      "browser": "./dist/plugin.mjs",
+      "default": "./dist/plugin.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fetch-unfill": "workspace:^",
+    "unplugin": "^2.3.4"
+  },
+  "devDependencies": {
+    "tsdown": "0.11.7"
+  }
+}

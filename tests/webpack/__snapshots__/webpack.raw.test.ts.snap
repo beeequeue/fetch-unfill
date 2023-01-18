@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`cross-fetch > bundles the original package > cjs 1`] = `"301.95KB"`;
+
+exports[`cross-fetch > bundles the original package > mjs 1`] = `"301.98KB"`;
+
+exports[`cross-fetch > unfills it > cjs 1`] = `"529B"`;
+
+exports[`cross-fetch > unfills it > mjs 1`] = `"614B"`;
+
+exports[`cross-fetch > unfills it > unfilled cjs code 1`] = `"(()=>{var e={65:(e,o,s)=>{const t=s(883);e.exports=()=>t("https://example.com"),e.exports.example=()=>t("https://example.com")},883:e=>{const o=globalThis.fetch;globalThis.fetch.polyfill=!1,o.polyfill=!1,e.exports=o,Object.assign(e.exports,{fetch:o,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})}},o={},s=function s(t){var l=o[t];if(void 0!==l)return l.exports;var r=o[t]={exports:{}};return e[t](r,r.exports,s),r.exports}(65);module.exports=s})();"`;
+
+exports[`cross-fetch > unfills it > unfilled mjs code 1`] = `"(()=>{"use strict";var e={d:(o,t)=>{for(var l in t)e.o(t,l)&&!e.o(o,l)&&Object.defineProperty(o,l,{enumerable:!0,get:t[l]})},o:(e,o)=>Object.prototype.hasOwnProperty.call(e,o),r:e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},o={};e.r(o),e.d(o,{default:()=>n,example:()=>i});const t=globalThis.fetch;globalThis.fetch.polyfill=!1,t.polyfill=!1;const l=t,{Request:r,Response:a,Headers:p,AbortController:s}=globalThis,n=()=>l("https://example.com"),i=()=>l("https://example.com");module.exports=o})();"`;
+
+exports[`node-fetch > bundles the original package > cjs 1`] = `"88.35KB"`;
+
+exports[`node-fetch > bundles the original package > mjs 1`] = `"85.62KB"`;
+
+exports[`node-fetch > unfills it > cjs 1`] = `"531B"`;
+
+exports[`node-fetch > unfills it > mjs 1`] = `"614B"`;
+
+exports[`node-fetch > unfills it > unfilled cjs code 1`] = `"(()=>{var e={533:(e,o,s)=>{const t=s(883);e.exports=()=>t("https://example.com"),e.exports.example=()=>t("https://example.com")},883:e=>{const o=globalThis.fetch;globalThis.fetch.polyfill=!1,o.polyfill=!1,e.exports=o,Object.assign(e.exports,{fetch:o,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})}},o={},s=function s(t){var l=o[t];if(void 0!==l)return l.exports;var r=o[t]={exports:{}};return e[t](r,r.exports,s),r.exports}(533);module.exports=s})();"`;
+
+exports[`node-fetch > unfills it > unfilled mjs code 1`] = `"(()=>{"use strict";var e={d:(o,t)=>{for(var l in t)e.o(t,l)&&!e.o(o,l)&&Object.defineProperty(o,l,{enumerable:!0,get:t[l]})},o:(e,o)=>Object.prototype.hasOwnProperty.call(e,o),r:e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})}},o={};e.r(o),e.d(o,{default:()=>n,example:()=>i});const t=globalThis.fetch;globalThis.fetch.polyfill=!1,t.polyfill=!1;const l=t,{Request:r,Response:a,Headers:p,AbortController:s}=globalThis,n=()=>l("https://example.com"),i=()=>l("https://example.com");module.exports=o})();"`;
