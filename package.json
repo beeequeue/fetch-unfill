@@ -1,12 +1,25 @@
 {
-  "name": "node-fetch-unbundler",
+  "name": "fetch-unfiller",
   "version": "0.0.0",
   "author": "BeeeQueue <adam@haglund.dev>",
   "license": "MIT",
   "private": true,
-  "packageManager": "pnpm@7.15.0",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "require": "./lib/index.cjs",
+      "import": "./lib/index.mjs"
+    },
+    "./node": {
+      "require": "./lib/node.cjs",
+      "import": "./lib/node.mjs"
+    }
+  },
+  "packageManager": "pnpm@7.25.0",
   "engines": {
-    "node": ">=16.15"
+    "node": ">=16"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
@@ -24,9 +37,18 @@
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "prepare": "simple-git-hooks"
   },
+  "peerDependencies": {
+    "@types/node-fetch": "^2"
+  },
+  "peerDependenciesMeta": {
+    "@types/node-fetch": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@beequeue/eslint-plugin": "1.1.2",
     "@tsconfig/node16-strictest": "1.0.4",
+    "@types/node-fetch": "2.6.2",
     "@vitest/coverage-c8": "0.27.2",
     "dotenv": "16.0.3",
     "eslint": "8.32.0",
