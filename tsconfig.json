@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/node16-strictest/tsconfig.json",
+  "extends": ["@tsconfig/node16/tsconfig.json", "@tsconfig/strictest/tsconfig.json"],
   "compilerOptions": {
     // Output
     "noEmit": true,
@@ -20,11 +20,12 @@
     "noPropertyAccessFromIndexSignature": false,
     "noUncheckedIndexedAccess": false,
     "exactOptionalPropertyTypes": false,
+    "verbatimModuleSyntax": false,
 
     // Extra types
-    "lib": ["es2021", "es2022"],
+    "lib": [],
     "types": []
   },
 
-  "include": ["src/**/*.ts"]
+  "include": ["./**/*.ts"]
 }
