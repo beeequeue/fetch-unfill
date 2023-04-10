@@ -8,11 +8,5 @@ export default defineConfig({
     env: {
       GIT_SHA: JSON.stringify(gitSha),
     },
-
-    coverage: {
-      enabled: true,
-      reporter: ["text", "lcov"],
-      reportsDirectory: "node_modules/.coverage",
-    },
   },
 })
