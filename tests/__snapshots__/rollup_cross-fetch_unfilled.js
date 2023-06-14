@@ -1,5 +1,1 @@
-'use strict';const fetchFn = globalThis.fetch;
-
-globalThis.fetch.polyfill = false;
-fetchFn.polyfill = false;var crossFetch = () => fetchFn("https://example.com");
-module.exports=crossFetch;
+"use strict";const l=globalThis.fetch;globalThis.fetch.polyfill=!1,l.polyfill=!1;var s=()=>l("https://example.com");module.exports=s;

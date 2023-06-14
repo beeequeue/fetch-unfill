@@ -1,5 +1,1 @@
-'use strict';const fetchFn = globalThis.fetch;
-
-globalThis.fetch.polyfill = false;
-fetchFn.polyfill = false;var nodeFetch = () => fetchFn("https://example.com");
-module.exports=nodeFetch;
+"use strict";const l=globalThis.fetch;globalThis.fetch.polyfill=!1,l.polyfill=!1;var e=()=>l("https://example.com");module.exports=e;

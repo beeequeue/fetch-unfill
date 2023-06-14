@@ -2,6 +2,7 @@
 import path from "path"
 
 import { rollup } from "rollup"
+import { minify } from "rollup-plugin-esbuild"
 import { describe, expect, test } from "vitest"
 
 import Alias from "@rollup/plugin-alias"
@@ -12,6 +13,7 @@ import Resolve from "@rollup/plugin-node-resolve"
 const build = async (name: string, useAlias = false) => {
   const context = await rollup({
     input: path.resolve(__dirname, "fixtures", `${name}.mjs`),
+    logLevel: "silent",
     plugins: [
       Json({ compact: true, preferConst: true }),
       CommonJs(),
@@ -27,6 +29,7 @@ const build = async (name: string, useAlias = false) => {
             },
           })
         : null,
+      minify(),
     ],
   })
 
