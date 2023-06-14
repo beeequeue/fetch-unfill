@@ -1,3 +1,3 @@
 import fetch from "cross-fetch"
 
-fetch("https://example.com").then(console.log)
+export default () => fetch("https://example.com")
