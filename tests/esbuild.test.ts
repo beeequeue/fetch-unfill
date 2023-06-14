@@ -32,7 +32,7 @@ const cases: Array<
   ["unfills it", "esbuild_node-fetch_unfilled.js", alias],
 ]
 
-describe.only("node-fetch", () => {
+describe("node-fetch", () => {
   test.each(cases)("%s", async (_, snapshotName, options) => {
     const result = await build("node-fetch", options)
 
