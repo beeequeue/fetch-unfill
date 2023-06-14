@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/prefer-module */
 import path from "path"
 
 import esbuild from "esbuild"
