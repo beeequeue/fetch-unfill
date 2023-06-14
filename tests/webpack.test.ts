@@ -11,7 +11,7 @@ const build = async (name: string, extraOptions: Configuration | null = {}) => {
   const compiler = webpack(
     merge(
       {
-        entry: path.resolve(__dirname, "fixtures", `${name}.js`),
+        entry: path.resolve(__dirname, "fixtures", `${name}.mjs`),
         resolve: {
           modules: [path.resolve(__dirname, "..", "node_modules")],
         },
@@ -60,14 +60,13 @@ describe("node-fetch", () => {
   test.each(cases)(
     "%s",
     async (_, snapshotName, options) => {
-      const result = await build("node-fetch", options)
+      const code = await build("node-fetch", options)
 
-      expect(result).not.toBeInstanceOf(Error)
-      assert(!(result instanceof Error))
+      expect(code).not.toBeInstanceOf(Error)
+      assert(!(code instanceof Error))
 
-      await expect(result).toMatchFileSnapshot(`__snapshots__/${snapshotName}`)
-
-      await expect(result).toBeAbleToFetch()
+      await expect(code).toMatchFileSnapshot(`__snapshots__/${snapshotName}`)
+      await expect(code).toBeAbleToFetch()
     },
     { timeout: 10_000 },
   )
@@ -77,16 +76,15 @@ describe("cross-fetch", () => {
   test.each(cases)(
     "%s",
     async (_, snapshotName, options) => {
-      const result = await build("cross-fetch", options)
+      const code = await build("cross-fetch", options)
 
-      expect(result).not.toBeInstanceOf(Error)
-      assert(!(result instanceof Error))
+      expect(code).not.toBeInstanceOf(Error)
+      assert(!(code instanceof Error))
 
-      await expect(result).toMatchFileSnapshot(
+      await expect(code).toMatchFileSnapshot(
         `__snapshots__/${snapshotName.replace("node-", "cross-")}`,
       )
-
-      await expect(result).toBeAbleToFetch()
+      await expect(code).toBeAbleToFetch()
     },
     { timeout: 10_000 },
   )

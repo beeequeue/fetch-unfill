@@ -6,7 +6,7 @@ import { describe, expect, test } from "vitest"
 
 const build = async (name: string, extraOptions: esbuild.BuildOptions | null = {}) =>
   await esbuild.build({
-    entryPoints: [path.resolve(__dirname, "fixtures", `${name}.js`)],
+    entryPoints: [path.resolve(__dirname, "fixtures", `${name}.mjs`)],
     write: false,
     nodePaths: [path.resolve(__dirname, "..", "node_modules")],
 
@@ -38,10 +38,10 @@ describe("node-fetch", () => {
 
     expect(result.errors).toStrictEqual([])
 
-    const contents = result.outputFiles![0].text
-    await expect(contents).toMatchFileSnapshot(`__snapshots__/${snapshotName}`)
+    const code = result.outputFiles![0].text
 
-    await expect(result.outputFiles![0].text).toBeAbleToFetch()
+    await expect(code).toMatchFileSnapshot(`__snapshots__/${snapshotName}`)
+    await expect(code).toBeAbleToFetch()
   })
 })
 
@@ -51,10 +51,11 @@ describe("cross-fetch", () => {
 
     expect(result.errors).toStrictEqual([])
 
-    await expect(result.outputFiles![0].text).toMatchFileSnapshot(
+    const code = result.outputFiles![0].text
+
+    await expect(code).toMatchFileSnapshot(
       `__snapshots__/${snapshotName.replace("node-", "cross-")}`,
     )
-
-    await expect(result.outputFiles![0].text).toBeAbleToFetch()
+    await expect(code).toBeAbleToFetch()
   })
 })

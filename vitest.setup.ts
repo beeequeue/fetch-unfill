@@ -14,9 +14,15 @@ declare module "vitest" {
 }
 /* eslint-enable */
 
+type Default<T> = { default: T }
+type TOrDefault<T> = T | Default<T>
+
+const isDefault = <T>(input: TOrDefault<T>): input is Default<T> =>
+  (input as Default<T>).default != null
+
 expect.extend({
   async toBeAbleToFetch(code: string) {
-    let module: { default: () => Promise<Response> }
+    let module: TOrDefault<() => Promise<Response>>
     try {
       module = requireFromString(code)
     } catch (error) {
@@ -27,7 +33,9 @@ expect.extend({
     }
 
     try {
-      const response = await module.default()
+      const fn = isDefault(module) ? module.default : module
+
+      const response = await fn()
       const body = await response.text()
 
       return {
