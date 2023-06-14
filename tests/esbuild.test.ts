@@ -32,7 +32,7 @@ const cases: Array<
   ["unfills it", "esbuild_node-fetch_unfilled.js", alias],
 ]
 
-describe("node-fetch", () => {
+describe.only("node-fetch", () => {
   test.each(cases)("%s", async (_, snapshotName, options) => {
     const result = await build("node-fetch", options)
 
@@ -40,6 +40,8 @@ describe("node-fetch", () => {
 
     const contents = result.outputFiles![0].text
     await expect(contents).toMatchFileSnapshot(`__snapshots__/${snapshotName}`)
+
+    await expect(result.outputFiles![0].text).toBeAbleToFetch()
   })
 })
 
@@ -52,5 +54,7 @@ describe("cross-fetch", () => {
     await expect(result.outputFiles![0].text).toMatchFileSnapshot(
       `__snapshots__/${snapshotName.replace("node-", "cross-")}`,
     )
+
+    await expect(result.outputFiles![0].text).toBeAbleToFetch()
   })
 })
