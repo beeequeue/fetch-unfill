@@ -41,6 +41,9 @@ devDependencies:
   eslint-define-config:
     specifier: 1.20.0
     version: 1.20.0
+  fetch-unfiller:
+    specifier: link:.
+    version: 'link:'
   lint-staged:
     specifier: 13.2.2
     version: 13.2.2

@@ -20,8 +20,8 @@ const build = async (name: string, extraOptions: esbuild.BuildOptions | null = {
 
 const alias = {
   alias: {
-    "node-fetch": path.resolve(__dirname, "..", "lib", "index.cjs"),
-    "cross-fetch": path.resolve(__dirname, "..", "lib", "index.cjs"),
+    "node-fetch": "fetch-unfiller/node",
+    "cross-fetch": "fetch-unfiller/node",
   },
 } satisfies esbuild.BuildOptions
 

@@ -44,8 +44,8 @@ const build = async (name: string, extraOptions: Configuration | null = {}) => {
 const alias = {
   resolve: {
     alias: {
-      "node-fetch": path.resolve(__dirname, "..", "lib", "index.cjs"),
-      "cross-fetch": path.resolve(__dirname, "..", "lib", "index.cjs"),
+      "node-fetch": "fetch-unfiller/node",
+      "cross-fetch": "fetch-unfiller/node",
     },
   },
 } satisfies Configuration
