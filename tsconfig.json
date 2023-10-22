@@ -6,6 +6,7 @@
     "sourceMap": true,
 
     // Modules
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,

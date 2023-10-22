@@ -32,7 +32,7 @@ const build = async (name: string, extraOptions: Configuration | null = {}) => {
 
   return await new Promise<string | Error>((resolve, reject) =>
     compiler.run((err, stats) => {
-      if (err || stats?.hasErrors()) {
+      if (err != null || stats?.hasErrors()) {
         return reject(err ?? stats!.toJson({ errors: true }).errors?.[0])
       }
 
