@@ -14,7 +14,7 @@
     ".": {
       "require": "./lib/index.cjs",
       "import": "./lib/index.mjs",
-      "node": "./lib/index.mjs"
+      "node": "./lib/node.mjs"
     },
     "./node": {
       "types": "./lib/node.d.ts",
