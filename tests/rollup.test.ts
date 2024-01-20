@@ -3,14 +3,16 @@ import path from "path"
 
 import { rollup } from "rollup"
 import { minify } from "rollup-plugin-esbuild"
-import { describe, expect, test } from "vitest"
+import { describe, it } from "vitest"
 
 import Alias from "@rollup/plugin-alias"
 import CommonJs from "@rollup/plugin-commonjs"
 import Json from "@rollup/plugin-json"
 import Resolve from "@rollup/plugin-node-resolve"
 
-const build = async (name: string, useAlias = false) => {
+import { createTester } from "./utils"
+
+const test = createTester(async (name: string, useAlias = false) => {
   const context = await rollup({
     input: path.resolve(__dirname, "fixtures", `${name}.mjs`),
     logLevel: "silent",
@@ -33,37 +35,31 @@ const build = async (name: string, useAlias = false) => {
     ],
   })
 
-  return await context.generate({
+  const result = await context.generate({
     format: "cjs",
     compact: true,
+    manualChunks: () => "index",
   })
-}
 
-const cases: Array<[name: string, snapshotName: string, useAlias: boolean]> = [
-  ["bundles the original package", "rollup_node-fetch_bundled.js", false],
-  ["unfills it", "rollup_node-fetch_unfilled.js", true],
-]
+  return result.output[0].code
+})
 
 describe("node-fetch", () => {
-  test.each(cases)("%s", async (_, snapshotName, useAlias) => {
-    const result = await build("node-fetch", useAlias)
+  it("bundles the original package", async () => {
+    await test("node-fetch", false)
+  })
 
-    const { code } = result.output[0]
-
-    await expect(code).toMatchFileSnapshot(`__snapshots__/${snapshotName}`)
-    await expect(code).toBeAbleToFetch()
+  it("unfills it", async () => {
+    await test("node-fetch", true)
   })
 })
 
 describe("cross-fetch", () => {
-  test.each(cases)("%s", async (_, snapshotName, useAlias) => {
-    const result = await build("cross-fetch", useAlias)
+  it("bundles the original package", async () => {
+    await test("cross-fetch", false)
+  })
 
-    const { code } = result.output[0]
-
-    await expect(code).toMatchFileSnapshot(
-      `__snapshots__/${snapshotName.replace("node-", "cross-")}`,
-    )
-    await expect(code).toBeAbleToFetch()
+  it("unfills it", async () => {
+    await test("cross-fetch", true)
   })
 })

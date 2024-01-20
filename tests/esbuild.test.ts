@@ -2,21 +2,31 @@
 import path from "path"
 
 import esbuild from "esbuild"
-import { describe, expect, test } from "vitest"
+import { describe, expect, it } from "vitest"
 
-const build = async (name: string, extraOptions: esbuild.BuildOptions | null = {}) =>
-  await esbuild.build({
-    entryPoints: [path.resolve(__dirname, "fixtures", `${name}.mjs`)],
-    write: false,
-    nodePaths: [path.resolve(__dirname, "..", "node_modules")],
+import { createTester } from "./utils"
 
-    platform: "node",
-    target: "node16",
-    bundle: true,
-    minify: true,
+const test = createTester(
+  async (name: string, extraOptions: esbuild.BuildOptions | null = {}) => {
+    const result = await esbuild.build({
+      entryPoints: [path.resolve(__dirname, "fixtures", `${name}.mjs`)],
+      write: false,
+      nodePaths: [path.resolve(__dirname, "..", "node_modules")],
 
-    ...extraOptions,
-  })
+      format: "cjs",
+      platform: "node",
+      target: "node20",
+      bundle: true,
+      minify: true,
+
+      ...extraOptions,
+    })
+
+    expect(result.errors).toStrictEqual([])
+
+    return result.outputFiles![0].text
+  },
+)
 
 const alias = {
   alias: {
@@ -25,37 +35,22 @@ const alias = {
   },
 } satisfies esbuild.BuildOptions
 
-const cases: Array<
-  [name: string, snapshotName: string, options: esbuild.BuildOptions | null]
-> = [
-  ["bundles the original package", "esbuild_node-fetch_bundled.js", null],
-  ["unfills it", "esbuild_node-fetch_unfilled.js", alias],
-]
-
 describe("node-fetch", () => {
-  test.each(cases)("%s", async (_, snapshotName, options) => {
-    const result = await build("node-fetch", options)
+  it("bundles the original package", async () => {
+    await test("node-fetch", null)
+  })
 
-    expect(result.errors).toStrictEqual([])
-
-    const code = result.outputFiles![0].text
-
-    await expect(code).toMatchFileSnapshot(`__snapshots__/${snapshotName}`)
-    await expect(code).toBeAbleToFetch()
+  it("unfills it", async () => {
+    await test("node-fetch", alias)
   })
 })
 
 describe("cross-fetch", () => {
-  test.each(cases)("%s", async (_, snapshotName, options) => {
-    const result = await build("cross-fetch", options)
+  it("bundles the original package", async () => {
+    await test("cross-fetch", null)
+  })
 
-    expect(result.errors).toStrictEqual([])
-
-    const code = result.outputFiles![0].text
-
-    await expect(code).toMatchFileSnapshot(
-      `__snapshots__/${snapshotName.replace("node-", "cross-")}`,
-    )
-    await expect(code).toBeAbleToFetch()
+  it("unfills it", async () => {
+    await test("cross-fetch", alias)
   })
 })
