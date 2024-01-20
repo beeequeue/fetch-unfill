@@ -16,11 +16,12 @@
       "node": "./lib/index.mjs"
     },
     "./node": {
+      "types": "./lib/node.d.ts",
       "require": "./lib/node.cjs",
       "import": "./lib/node.mjs"
     }
   },
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.14.1",
   "engines": {
     "node": ">=14"
   },
@@ -38,13 +39,8 @@
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "prepare": "simple-git-hooks"
   },
-  "peerDependencies": {
-    "@types/node-fetch": "^2 || ^3"
-  },
-  "peerDependenciesMeta": {
-    "@types/node-fetch": {
-      "optional": true
-    }
+  "dependencies": {
+    "undici-types": "^6.4.0"
   },
   "devDependencies": {
     "@beequeue/eslint-plugin": "4.0.0",
