@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`cross-fetch > bundles the original package 1`] = `"302.6KB"`;
+
+exports[`cross-fetch > unfills it 1`] = `"647B"`;
+
+exports[`node-fetch > bundles the original package 1`] = `"90.35KB"`;
+
+exports[`node-fetch > unfills it 1`] = `"647B"`;

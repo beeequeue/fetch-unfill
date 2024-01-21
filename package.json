@@ -1,6 +1,7 @@
 {
   "name": "fetch-unfiller",
-  "version": "0.0.2",
+  "type": "module",
+  "version": "0.1.0",
   "author": "BeeeQueue <adam@haglund.dev>",
   "license": "MIT",
   "repository": "BeeeQueue/fetch-unfiller",
@@ -13,14 +14,15 @@
     ".": {
       "require": "./lib/index.cjs",
       "import": "./lib/index.mjs",
-      "node": "./lib/index.mjs"
+      "node": "./lib/node.mjs"
     },
     "./node": {
+      "types": "./lib/node.d.ts",
       "require": "./lib/node.cjs",
       "import": "./lib/node.mjs"
     }
   },
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.14.1",
   "engines": {
     "node": ">=14"
   },
@@ -38,42 +40,38 @@
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "prepare": "simple-git-hooks"
   },
-  "peerDependencies": {
-    "@types/node-fetch": "^2 || ^3"
-  },
-  "peerDependenciesMeta": {
-    "@types/node-fetch": {
-      "optional": true
-    }
+  "dependencies": {
+    "undici-types": "^6.4.0"
   },
   "devDependencies": {
     "@beequeue/eslint-plugin": "4.0.0",
-    "@rollup/plugin-alias": "5.0.1",
+    "@rollup/plugin-alias": "5.1.0",
     "@rollup/plugin-commonjs": "25.0.7",
-    "@rollup/plugin-json": "6.0.1",
+    "@rollup/plugin-json": "6.1.0",
     "@rollup/plugin-node-resolve": "15.2.3",
     "@tsconfig/node18": "18.2.2",
     "@tsconfig/strictest": "2.0.2",
-    "@types/node": "20.8.7",
-    "@types/node-fetch": "2.6.7",
-    "@types/require-from-string": "1.2.2",
-    "@vitest/coverage-v8": "0.34.6",
+    "@types/bytes": "3.1.4",
+    "@types/node": "20.11.5",
+    "@types/node-fetch": "2.6.11",
+    "@types/require-from-string": "1.2.3",
+    "bytes": "3.1.2",
     "cross-fetch": "4.0.0",
-    "dotenv": "16.3.1",
-    "esbuild": "0.19.5",
-    "eslint": "8.52.0",
-    "eslint-define-config": "1.24.1",
-    "fetch-unfiller": "link:.",
-    "lint-staged": "15.0.2",
+    "dotenv": "16.3.2",
+    "esbuild": "0.19.11",
+    "eslint": "8.56.0",
+    "eslint-define-config": "2.1.0",
+    "fetch-unfiller": "link:",
+    "lint-staged": "15.2.0",
     "memfs": "4.6.0",
-    "node-fetch": "2.7.0",
-    "prettier": "3.0.3",
+    "node-fetch": "3.3.2",
+    "prettier": "3.2.4",
     "require-from-string": "2.0.2",
-    "rollup": "4.1.4",
+    "rollup": "4.9.5",
     "rollup-plugin-esbuild": "6.1.0",
     "simple-git-hooks": "2.9.0",
-    "typescript": "5.2.2",
-    "vitest": "0.34.6",
+    "typescript": "5.3.3",
+    "vitest": "1.2.1",
     "webpack": "5.89.0",
     "webpack-merge": "5.10.0"
   },
