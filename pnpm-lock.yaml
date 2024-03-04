@@ -21,7 +21,7 @@ overrides:
 
 dependencies:
   undici-types:
-    specifier: ^6.6.1
+    specifier: 6.6.1
     version: 6.6.1
 
 devDependencies:
