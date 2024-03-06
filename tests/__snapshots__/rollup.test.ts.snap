@@ -4,6 +4,6 @@ exports[`cross-fetch > bundles the original package 1`] = `"302.34KB"`;
 
 exports[`cross-fetch > unfills it 1`] = `"134B"`;
 
-exports[`node-fetch > bundles the original package 1`] = `"89.61KB"`;
+exports[`node-fetch > bundles the original package 1`] = `"89.83KB"`;
 
 exports[`node-fetch > unfills it 1`] = `"134B"`;
