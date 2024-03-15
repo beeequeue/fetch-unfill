@@ -58,7 +58,7 @@
     "bytes": "3.1.2",
     "cross-fetch": "4.0.0",
     "dotenv": "16.4.5",
-    "esbuild": "0.20.1",
+    "esbuild": "0.20.2",
     "eslint": "8.57.0",
     "eslint-define-config": "2.1.0",
     "fetch-unfiller": "link:",
