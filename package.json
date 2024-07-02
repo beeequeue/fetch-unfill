@@ -73,7 +73,7 @@
     "typescript": "5.4.2",
     "vitest": "1.4.0",
     "webpack": "5.90.3",
-    "webpack-merge": "5.10.0"
+    "webpack-merge": "6.0.1"
   },
   "pnpm": {
     "overrides": {
