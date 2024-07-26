@@ -4,6 +4,7 @@
     "helpers:disableTypesNodeMajor",
     "schedule:earlyMondays",
     "group:allNonMajor",
+    ":preserveSemverRanges",
     "schedule:monthly"
   ],
   prHourlyLimit: 5,
