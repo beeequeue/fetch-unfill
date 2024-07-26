@@ -41,7 +41,7 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "undici-types": "^6.7.0"
+    "undici-types": "6.7.0"
   },
   "devDependencies": {
     "@beequeue/eslint-plugin": "4.0.1",
