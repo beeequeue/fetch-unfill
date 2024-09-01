@@ -1,9 +1,8 @@
-/* eslint-disable unicorn/prefer-module */
-import path from "path"
+import path from "node:path"
 
-import { createFsFromVolume, Volume } from "memfs"
-import { describe, it, expect } from "vitest"
-import { Configuration, webpack } from "webpack"
+import { Volume, createFsFromVolume } from "memfs"
+import { describe, expect, it } from "vitest"
+import { type Configuration, webpack } from "webpack"
 import { merge } from "webpack-merge"
 
 import { createTester } from "./utils"

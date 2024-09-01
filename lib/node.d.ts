@@ -1,9 +1,9 @@
 import type {
-  fetch as $fetch,
+  AbortController as $AbortController,
   $Headers,
   $Request,
   $Response,
-  AbortController as $AbortController,
+  fetch as $fetch,
 } from "undici-types"
 
 declare global {

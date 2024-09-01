@@ -1,5 +1,4 @@
-/* eslint-disable unicorn/prefer-module,prefer-destructuring */
-import path from "path"
+import path from "node:path"
 
 import { rollup } from "rollup"
 import { minify } from "rollup-plugin-esbuild"
@@ -23,7 +22,7 @@ const test = createTester(async (name: string, useAlias = false) => {
         modulePaths: [path.resolve(__dirname, "..", "node_modules")],
         preferBuiltins: true,
       }),
-      useAlias
+      useAlias != null
         ? Alias({
             entries: {
               "node-fetch": "fetch-unfiller/node",

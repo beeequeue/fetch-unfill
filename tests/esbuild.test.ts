@@ -1,5 +1,4 @@
-/* eslint-disable unicorn/prefer-module */
-import path from "path"
+import path from "node:path"
 
 import esbuild from "esbuild"
 import { describe, expect, it } from "vitest"

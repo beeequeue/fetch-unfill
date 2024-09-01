@@ -2,9 +2,9 @@ import type { Response } from "node-fetch"
 import requireFromString from "require-from-string"
 import { expect } from "vitest"
 
-/* eslint-disable @typescript-eslint/consistent-type-definitions,@typescript-eslint/no-empty-interface */
+/* eslint-disable unused-imports/no-unused-vars */
 interface CustomMatchers {
-  toBeAbleToFetch(): Promise<void>
+  toBeAbleToFetch: () => Promise<void>
 }
 
 declare module "vitest" {
@@ -12,7 +12,6 @@ declare module "vitest" {
 
   interface AsymmetricMatchersContaining extends CustomMatchers {}
 }
-/* eslint-enable */
 
 type Default<T> = { default: T }
 type TOrDefault<T> = T | Default<T>
@@ -24,7 +23,7 @@ expect.extend({
   async toBeAbleToFetch(code: string) {
     let module: TOrDefault<() => Promise<Response>>
     try {
-      module = requireFromString(code)
+      module = requireFromString(code) as TOrDefault<() => Promise<Response>>
     } catch (error) {
       return {
         pass: false,

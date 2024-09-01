@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import bytes from "bytes"
 import { expect } from "vitest"
 
