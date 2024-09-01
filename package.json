@@ -12,9 +12,10 @@
   "module": "./lib/index.mjs",
   "exports": {
     ".": {
+      "types": "./lib/node.d.ts",
+      "node": "./lib/node.mjs",
       "require": "./lib/index.cjs",
-      "import": "./lib/index.mjs",
-      "node": "./lib/node.mjs"
+      "import": "./lib/index.mjs"
     },
     "./node": {
       "types": "./lib/node.d.ts",
