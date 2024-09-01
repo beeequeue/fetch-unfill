@@ -1,5 +1,4 @@
-/* eslint-disable unicorn/prefer-module,prefer-destructuring */
-import path from "path"
+import path from "node:path"
 
 import { rollup } from "rollup"
 import { minify } from "rollup-plugin-esbuild"
@@ -12,7 +11,7 @@ import Resolve from "@rollup/plugin-node-resolve"
 
 import { createTester } from "./utils"
 
-const test = createTester(async (name: string, useAlias = false) => {
+const test = createTester("rollup", async (name: string, useAlias: boolean = false) => {
   const context = await rollup({
     input: path.resolve(__dirname, "fixtures", `${name}.mjs`),
     logLevel: "silent",
