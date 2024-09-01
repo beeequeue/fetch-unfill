@@ -11,7 +11,7 @@ import Resolve from "@rollup/plugin-node-resolve"
 
 import { createTester } from "./utils"
 
-const test = createTester(async (name: string, useAlias = false) => {
+const test = createTester("rollup", async (name: string, useAlias: boolean = false) => {
   const context = await rollup({
     input: path.resolve(__dirname, "fixtures", `${name}.mjs`),
     logLevel: "silent",
@@ -22,7 +22,7 @@ const test = createTester(async (name: string, useAlias = false) => {
         modulePaths: [path.resolve(__dirname, "..", "node_modules")],
         preferBuiltins: true,
       }),
-      useAlias != null
+      useAlias
         ? Alias({
             entries: {
               "node-fetch": "fetch-unfiller/node",

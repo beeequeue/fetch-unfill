@@ -6,6 +6,7 @@ import { describe, expect, it } from "vitest"
 import { createTester } from "./utils"
 
 const test = createTester(
+  "esbuild",
   async (name: string, extraOptions: esbuild.BuildOptions | null = {}) => {
     const result = await esbuild.build({
       entryPoints: [path.resolve(__dirname, "fixtures", `${name}.mjs`)],

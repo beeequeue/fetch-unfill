@@ -2,12 +2,13 @@ import path from "node:path"
 
 import { Volume, createFsFromVolume } from "memfs"
 import { describe, expect, it } from "vitest"
-import { type Configuration, webpack } from "webpack"
+import { type Configuration, type OutputFileSystem, webpack } from "webpack"
 import { merge } from "webpack-merge"
 
 import { createTester } from "./utils"
 
 const test = createTester(
+  "webpack",
   async (name: string, extraOptions: Configuration | null = {}) => {
     const compiler = webpack(
       merge(
@@ -29,7 +30,7 @@ const test = createTester(
     )
 
     const output = createFsFromVolume(new Volume())
-    compiler.outputFileSystem = output
+    compiler.outputFileSystem = output as OutputFileSystem
 
     const result = await new Promise<string | Error>((resolve, reject) =>
       compiler.run((err, stats) => {

@@ -5,7 +5,10 @@ const getByteSize = (contents: string) =>
   bytes(Uint8Array.from(new TextEncoder().encode(contents)).byteLength)
 
 export const createTester =
-  <Fn extends (name: string, options: any) => Promise<string>>(build: Fn) =>
+  <Fn extends (name: string, options: any) => Promise<string>>(
+    bundler: string,
+    build: Fn,
+  ) =>
   async (
     name: string,
     options: Fn extends (_: string, options: infer O) => unknown ? O : never,
@@ -15,7 +18,9 @@ export const createTester =
 
     expect(getByteSize(code)).toMatchSnapshot()
     if (fileSnapshot) {
-      await expect(code).toMatchFileSnapshot(`__snapshots__/esbuild_${name}_unfilled.js`)
+      await expect(code).toMatchFileSnapshot(
+        `__snapshots__/${bundler}_${name}_unfilled.js`,
+      )
     }
     await expect(code).toBeAbleToFetch()
   }
