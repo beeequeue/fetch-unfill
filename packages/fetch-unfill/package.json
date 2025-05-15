@@ -2,7 +2,7 @@
   "name": "fetch-unfill",
   "type": "module",
   "description": "Un-polyfill fetch in favor of native implementations",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "beequeue <adam@haglund.dev>",
   "repository": {
