@@ -36,11 +36,14 @@
     "lint:pkg": "publint",
     "typecheck": "tsc --noEmit"
   },
+  "peerDependencies": {
+    "fetch-unfill": "workspace:^"
+  },
   "dependencies": {
-    "fetch-unfill": "workspace:^",
     "unplugin": "^2.3.4"
   },
   "devDependencies": {
+    "fetch-unfill": "workspace:^",
     "tsdown": "0.11.7"
   }
 }
