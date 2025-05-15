@@ -65,7 +65,7 @@ const alias = {
   },
 } satisfies Configuration
 
-describe("node-fetch", { timeout: 15_000 }, () => {
+describe("node-fetch", () => {
   it("bundles the original package", async () => {
     await test("node-fetch", null)
   })
@@ -75,7 +75,7 @@ describe("node-fetch", { timeout: 15_000 }, () => {
   })
 })
 
-describe("cross-fetch", { timeout: 15_000 }, () => {
+describe("cross-fetch", () => {
   it("bundles the original package", async () => {
     await test("cross-fetch", null)
   })
