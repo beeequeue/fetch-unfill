@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@4.0.0-next.0/schema.json",
+  "access": "public",
+  "baseBranch": "main",
+  "ignore": ["@fetch-unfill/tests"],
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "BeeeQueue/fetch-unfill"
+    }
+  ]
+}

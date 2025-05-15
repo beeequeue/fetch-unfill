@@ -1,7 +1,7 @@
 {
   "name": "fetch-unfill",
   "type": "module",
-  "description": "",
+  "description": "Un-polyfill fetch in favor of native implementations",
   "version": "0.0.0",
   "license": "MIT",
   "author": "beequeue <adam@haglund.dev>",
@@ -34,6 +34,7 @@
     }
   },
   "scripts": {
-    "lint": "eslint"
+    "lint": "eslint",
+    "lint:pkg": "publint"
   }
 }

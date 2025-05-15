@@ -1,7 +1,7 @@
 {
   "name": "unplugin-fetch-unfill",
   "type": "module",
-  "description": "",
+  "description": "Unplugin for un-polyfilling fetch in favor of native implementations",
   "version": "0.0.0",
   "license": "MIT",
   "author": "beequeue <adam@haglund.dev>",
@@ -33,6 +33,7 @@
   "scripts": {
     "build": "tsdown",
     "lint": "eslint",
+    "lint:pkg": "publint",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
