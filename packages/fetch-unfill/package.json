@@ -7,7 +7,7 @@
   "author": "beequeue <adam@haglund.dev>",
   "repository": {
     "type": "github",
-    "url": "https://github.com/beeequeue/tinywhich",
+    "url": "https://github.com/beeequeue/fetch-unfill",
     "directory": "./packages/fetch-unfill"
   },
   "engines": {
