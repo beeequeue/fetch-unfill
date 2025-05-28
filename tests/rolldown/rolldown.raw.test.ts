@@ -11,6 +11,7 @@ const test = createTester("rollup", async (name: string, useAlias: boolean = fal
   const options = {
     logLevel: "silent",
     platform: "node",
+    external: ["xmlhttprequest"],
     plugins: [useAlias ? aliasPlugin({ entries: rollupAliases }) : null],
   } satisfies RolldownOptions
 

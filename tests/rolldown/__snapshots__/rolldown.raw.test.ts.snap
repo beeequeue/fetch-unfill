@@ -60,14 +60,14 @@ exports[`unfetch > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(t||e
 
 exports[`unfetch > unfills it > unfilled mjs code 1`] = `"const e=globalThis.fetch;globalThis.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
 
-exports[`whatwg-fetch > bundles the original package > cjs 1`] = `"10.2KB"`;
+exports[`whatwg-fetch > bundles the original package > cjs 1`] = `"10.27KB"`;
 
-exports[`whatwg-fetch > bundles the original package > mjs 1`] = `"10.69KB"`;
+exports[`whatwg-fetch > bundles the original package > mjs 1`] = `"10.75KB"`;
 
-exports[`whatwg-fetch > unfills it > cjs 1`] = `"429B"`;
+exports[`whatwg-fetch > unfills it > cjs 1`] = `"503B"`;
 
-exports[`whatwg-fetch > unfills it > mjs 1`] = `"249B"`;
+exports[`whatwg-fetch > unfills it > mjs 1`] = `"299B"`;
 
-exports[`whatwg-fetch > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),t=e((exports,t)=>{let n=globalThis.fetch;globalThis.fetch.polyfill=!1,n.polyfill=!1,t.exports=n,Object.assign(t.exports,{fetch:n,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})});const n=t();module.exports=()=>n(\`https://example.com\`),module.exports.example=()=>n(\`https://example.com\`);"`;
+exports[`whatwg-fetch > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),t=e((exports,t)=>{let n=globalThis.fetch;globalThis.fetch.polyfill=!1,n.polyfill=!1,t.exports=n,Object.assign(t.exports,{fetch:n,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})});globalThis.XMLHttpRequest=require(\`xmlhttprequest\`).XMLHttpRequest;const{fetch:n}=t();module.exports=()=>n(\`https://example.com\`),module.exports.example=()=>n(\`https://example.com\`);"`;
 
-exports[`whatwg-fetch > unfills it > unfilled mjs code 1`] = `"const e=globalThis.fetch;globalThis.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
+exports[`whatwg-fetch > unfills it > unfilled mjs code 1`] = `"import e from"xmlhttprequest";const t=globalThis.fetch;globalThis.fetch.polyfill=!1,t.polyfill=!1;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;globalThis.XMLHttpRequest=e;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
