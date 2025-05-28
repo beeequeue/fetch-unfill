@@ -1,5 +1,6 @@
 import path from "node:path"
 
+import { rollupAliases } from "fetch-unfill/aliases"
 import { rolldown, type RolldownOptions } from "rolldown"
 import { aliasPlugin } from "rolldown/experimental"
 import { describe, expect, it } from "vitest"
@@ -10,17 +11,7 @@ const test = createTester("rollup", async (name: string, useAlias: boolean = fal
   const options = {
     logLevel: "silent",
     platform: "node",
-    plugins: [
-      useAlias
-        ? aliasPlugin({
-            entries: [
-              { find: "node-fetch", replacement: "fetch-unfill" },
-              { find: "node-fetch-native", replacement: "fetch-unfill" },
-              { find: "cross-fetch", replacement: "fetch-unfill" },
-            ],
-          })
-        : null,
-    ],
+    plugins: [useAlias ? aliasPlugin({ entries: rollupAliases }) : null],
   } satisfies RolldownOptions
 
   const cjs = await rolldown({

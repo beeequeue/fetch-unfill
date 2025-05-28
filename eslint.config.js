@@ -22,7 +22,7 @@ const sortImports = {
 }
 
 export default antfu({
-  ignores: ["**/*.json"],
+  ignores: ["**/*.json", "aliases.d.mts"],
   markdown: false,
   stylistic: false,
   jsonc: false,

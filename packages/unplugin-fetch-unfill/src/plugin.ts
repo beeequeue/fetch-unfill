@@ -8,6 +8,11 @@ type FetchUnfillOptions = {
   unfetch?: boolean
 }
 
+export {
+  default as fetchUnfillAliases,
+  rollupAliases as fetchUnfillRollupAliases,
+} from "fetch-unfill/aliases"
+
 export const fetchUnfillUnplugin: UnpluginInstance<
   FetchUnfillOptions | undefined,
   false

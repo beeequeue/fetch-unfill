@@ -1,5 +1,6 @@
 import path from "node:path"
 
+import fetchUnfillAliases from "fetch-unfill/aliases"
 import { createFsFromVolume, Volume } from "memfs"
 import { describe, expect, it } from "vitest"
 import { type Configuration, optimize, type OutputFileSystem, webpack } from "webpack"
@@ -58,10 +59,7 @@ const test = createTester(
 
 const alias = {
   resolve: {
-    alias: {
-      "node-fetch": "fetch-unfill",
-      "cross-fetch": "fetch-unfill",
-    },
+    alias: fetchUnfillAliases,
   },
 } satisfies Configuration
 

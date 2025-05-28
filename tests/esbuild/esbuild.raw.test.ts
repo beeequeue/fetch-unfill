@@ -1,6 +1,7 @@
 import path from "node:path"
 
 import esbuild from "esbuild"
+import fetchUnfillAliases from "fetch-unfill/aliases"
 import { describe, expect, it } from "vitest"
 
 import { createTester } from "../utils.js"
@@ -47,10 +48,7 @@ const test = createTester(
 )
 
 const alias = {
-  alias: {
-    "node-fetch": "fetch-unfill",
-    "cross-fetch": "fetch-unfill",
-  },
+  alias: fetchUnfillAliases,
 } satisfies esbuild.BuildOptions
 
 describe("node-fetch", () => {
