@@ -44,12 +44,13 @@ Install `fetch-unfill` with your package manager.
 
 ```ts
 import { defineConfig } from "vite"
+import fetchUnfillAliases from "fetch-unfill/aliases"
 
 export default defineConfig({
   resolve: {
     alias: {
-      // Alias any `fetch` package in use to `fetch-unfill`
-      "cross-fetch": "fetch-unfill",
+      // Alias any known, replaceable polyfills in use to `fetch-unfill`
+      ...fetchUnfillAliases,
     },
   },
 })
@@ -64,12 +65,13 @@ export default defineConfig({
 
 ```ts
 import { build } from "esbuild"
+import fetchUnfillAliases from "fetch-unfill/aliases"
 
 await build({
   // ...
   alias: {
-    // Alias any `fetch` package in use to `fetch-unfill`
-    "cross-fetch": "fetch-unfill",
+    // Alias any known, replaceable polyfills in use to `fetch-unfill`
+    ...fetchUnfillAliases,
   },
 })
 ```
@@ -83,13 +85,14 @@ await build({
 
 ```ts
 import type { Configuration } from "webpack"
+import fetchUnfillAliases from "fetch-unfill/aliases"
 
 export default {
   // ...
   resolve: {
     alias: {
-      // Alias any `fetch` package in use to `fetch-unfill`
-      "cross-fetch": "fetch-unfill",
+      // Alias any known, replaceable polyfills in use to `fetch-unfill`
+      ...fetchUnfillAliases,
     },
   },
 } satisfies Configuration
@@ -105,16 +108,17 @@ export default {
 ```ts
 import type { RolldownOptions } from "rolldown"
 import { aliasPlugin } from "rolldown/experimental"
+import { rollupAliases } from "fetch-unfill/aliases"
 
 export default {
   // ...
   plugins: [
     // ...
     aliasPlugin({
-      entries: {
-        // Alias any `fetch` package in use to `fetch-unfill`
-        "cross-fetch": "fetch-unfill",
-      },
+      entries: [
+        // Alias any known, replaceable polyfills in use to `fetch-unfill`
+        ...rollupAliases,
+      ],
     }),
   ],
 } satisfies RolldownOptions
@@ -130,16 +134,17 @@ export default {
 ```ts
 import type { RollupOptions } from "rollup"
 import Alias from "@rollup/plugin-alias"
+import { rollupAliases } from "fetch-unfill/aliases"
 
 export default {
   // ...
   plugins: [
     // ...
     Alias({
-      entries: {
-        // Alias any `fetch` package in use to `fetch-unfill`
-        "cross-fetch": "fetch-unfill",
-      },
+      entries: [
+        // Alias any known, replaceable polyfills in use to `fetch-unfill`
+        ...rollupAliases,
+      ],
     }),
   ],
 } satisfies RollupOptions
