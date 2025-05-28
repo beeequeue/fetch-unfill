@@ -1,25 +1,37 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`cross-fetch > bundles the original package > cjs 1`] = `"307.02KB"`;
+exports[`cross-fetch > bundles the original package > cjs 1`] = `"306.8KB"`;
 
-exports[`cross-fetch > bundles the original package > mjs 1`] = `"310.93KB"`;
+exports[`cross-fetch > bundles the original package > mjs 1`] = `"307.32KB"`;
 
 exports[`cross-fetch > unfills it > cjs 1`] = `"429B"`;
 
-exports[`cross-fetch > unfills it > mjs 1`] = `"237B"`;
+exports[`cross-fetch > unfills it > mjs 1`] = `"249B"`;
 
 exports[`cross-fetch > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),t=e((exports,t)=>{let n=globalThis.fetch;globalThis.fetch.polyfill=!1,n.polyfill=!1,t.exports=n,Object.assign(t.exports,{fetch:n,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})});const n=t();module.exports=()=>n(\`https://example.com\`),module.exports.example=()=>n(\`https://example.com\`);"`;
 
-exports[`cross-fetch > unfills it > unfilled mjs code 1`] = `"const e=window.fetch;window.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=window;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
+exports[`cross-fetch > unfills it > unfilled mjs code 1`] = `"const e=globalThis.fetch;globalThis.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
 
 exports[`node-fetch > bundles the original package > cjs 1`] = `"108.89KB"`;
 
-exports[`node-fetch > bundles the original package > mjs 1`] = `"109.63KB"`;
+exports[`node-fetch > bundles the original package > mjs 1`] = `"109.39KB"`;
 
 exports[`node-fetch > unfills it > cjs 1`] = `"429B"`;
 
-exports[`node-fetch > unfills it > mjs 1`] = `"237B"`;
+exports[`node-fetch > unfills it > mjs 1`] = `"249B"`;
 
 exports[`node-fetch > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),t=e((exports,t)=>{let n=globalThis.fetch;globalThis.fetch.polyfill=!1,n.polyfill=!1,t.exports=n,Object.assign(t.exports,{fetch:n,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})});const n=t();module.exports=()=>n(\`https://example.com\`),module.exports.example=()=>n(\`https://example.com\`);"`;
 
-exports[`node-fetch > unfills it > unfilled mjs code 1`] = `"const e=window.fetch;window.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=window;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
+exports[`node-fetch > unfills it > unfilled mjs code 1`] = `"const e=globalThis.fetch;globalThis.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
+
+exports[`node-fetch-native > bundles the original package > cjs 1`] = `"113.96KB"`;
+
+exports[`node-fetch-native > bundles the original package > mjs 1`] = `"111.76KB"`;
+
+exports[`node-fetch-native > unfills it > cjs 1`] = `"429B"`;
+
+exports[`node-fetch-native > unfills it > mjs 1`] = `"249B"`;
+
+exports[`node-fetch-native > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),t=e((exports,t)=>{let n=globalThis.fetch;globalThis.fetch.polyfill=!1,n.polyfill=!1,t.exports=n,Object.assign(t.exports,{fetch:n,Request:globalThis.Request,Response:globalThis.Response,Headers:globalThis.Headers,AbortController:globalThis.AbortController})});const n=t();module.exports=()=>n(\`https://example.com\`),module.exports.example=()=>n(\`https://example.com\`);"`;
+
+exports[`node-fetch-native > unfills it > unfilled mjs code 1`] = `"const e=globalThis.fetch;globalThis.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;

@@ -20,6 +20,7 @@
     "esbuild": "0.25.4",
     "fetch-unfill": "workspace:*",
     "memfs": "4.17.1",
+    "node-fetch-native": "1.6.6",
     "require-from-string": "2.0.2",
     "rolldown": "1.0.0-beta.8-commit.d95f99e",
     "rollup": "4.40.2",

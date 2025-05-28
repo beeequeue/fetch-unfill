@@ -9,6 +9,7 @@
 Removes `fetch` polyfills from your bundles in favor of native implementations.
 
 - ✅ `node-fetch`
+- ✅ `node-fetch-native`
 - ✅ `cross-fetch`
 - ❔ `whatwg-fetch`
 - ❔ `unfetch`
