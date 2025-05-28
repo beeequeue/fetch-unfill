@@ -1,8 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`cross-fetch > bundles the original package > cjs 1`] = `"306.8KB"`;
+exports[`cross-fetch > bundles the original package > cjs 1`] = `"301.58KB"`;
 
-exports[`cross-fetch > bundles the original package > mjs 1`] = `"307.32KB"`;
+exports[`cross-fetch > bundles the original package > mjs 1`] = `"302.09KB"`;
 
 exports[`cross-fetch > unfills it > cjs 1`] = `"429B"`;
 
@@ -12,9 +12,9 @@ exports[`cross-fetch > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(
 
 exports[`cross-fetch > unfills it > unfilled mjs code 1`] = `"const e=globalThis.fetch;globalThis.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
 
-exports[`node-fetch > bundles the original package > cjs 1`] = `"108.89KB"`;
+exports[`node-fetch > bundles the original package > cjs 1`] = `"90.74KB"`;
 
-exports[`node-fetch > bundles the original package > mjs 1`] = `"109.39KB"`;
+exports[`node-fetch > bundles the original package > mjs 1`] = `"89.52KB"`;
 
 exports[`node-fetch > unfills it > cjs 1`] = `"429B"`;
 
@@ -24,9 +24,9 @@ exports[`node-fetch > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(t
 
 exports[`node-fetch > unfills it > unfilled mjs code 1`] = `"const e=globalThis.fetch;globalThis.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
 
-exports[`node-fetch-native > bundles the original package > cjs 1`] = `"113.96KB"`;
+exports[`node-fetch-native > bundles the original package > cjs 1`] = `"114.16KB"`;
 
-exports[`node-fetch-native > bundles the original package > mjs 1`] = `"111.76KB"`;
+exports[`node-fetch-native > bundles the original package > mjs 1`] = `"111.75KB"`;
 
 exports[`node-fetch-native > unfills it > cjs 1`] = `"429B"`;
 
