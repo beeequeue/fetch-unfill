@@ -11,8 +11,9 @@ Removes `fetch` polyfills from your bundles in favor of native implementations.
 - ✅ `node-fetch`
 - ✅ `node-fetch-native`
 - ✅ `cross-fetch`
-- ❔ `whatwg-fetch`
-- ❔ `unfetch`
+- ✅ `unfetch`
+- ✅ `whatwg-fetch`
+- ✅ `@supabase/node-fetch`
 - ❌ `@whatwg-node/fetch`
 
 ✅: verified ❔: unverified, should work ❌: not removable

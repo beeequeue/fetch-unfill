@@ -7,6 +7,9 @@ export type Output = { cjs: string; mjs: string }
 
 export const getByteSize = (contents: string) => bytes(Buffer.from(contents).byteLength)
 
+export const sanitizePackageName = (name: string) =>
+  name.replace(/^@/, "").replace(/\//g, "_")
+
 export const createTester =
   <Fn extends (name: string, options: any) => Promise<Output>>(
     _bundler: string,

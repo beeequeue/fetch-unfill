@@ -1,11 +1,11 @@
 import path from "node:path"
 
-import { rollupAliases } from "fetch-unfill/aliases"
+import fetchUnfillAliases, { rollupAliases } from "fetch-unfill/aliases"
 import { rolldown, type RolldownOptions } from "rolldown"
 import { aliasPlugin } from "rolldown/experimental"
 import { describe, expect, it } from "vitest"
 
-import { createTester } from "../utils.js"
+import { createTester, sanitizePackageName } from "../utils.js"
 
 const test = createTester("rollup", async (name: string, useAlias: boolean = false) => {
   const options = {
@@ -44,32 +44,14 @@ const test = createTester("rollup", async (name: string, useAlias: boolean = fal
   }
 })
 
-describe("node-fetch", () => {
+const cases = Object.keys(fetchUnfillAliases) as Array<keyof typeof fetchUnfillAliases>
+
+describe.each(cases)("%s", (packageName) => {
   it("bundles the original package", async () => {
-    await test("node-fetch", false)
+    await test(sanitizePackageName(packageName), false)
   })
 
   it("unfills it", async () => {
-    await test("node-fetch", true, true)
-  })
-})
-
-describe("node-fetch-native", () => {
-  it("bundles the original package", async () => {
-    await test("node-fetch-native", false)
-  })
-
-  it("unfills it", async () => {
-    await test("node-fetch-native", true, true)
-  })
-})
-
-describe("cross-fetch", () => {
-  it("bundles the original package", async () => {
-    await test("cross-fetch", false)
-  })
-
-  it("unfills it", async () => {
-    await test("cross-fetch", true, true)
+    await test(sanitizePackageName(packageName), true, true)
   })
 })
