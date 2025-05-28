@@ -22,6 +22,24 @@
   "browser": "./lib/index.mjs",
   "types": "./lib/index.d.mts",
   "exports": {
+    "browser": "./lib/index.mjs",
+    "bun": "./lib/index.mjs",
+    "deno": "./lib/index.mjs",
+    "wintercg": "./lib/index.mjs",
+    "worker": "./lib/index.mjs",
+    "workerd": "./lib/index.mjs",
+    "node": {
+      "require": {
+        "types": "./lib/index.d.mts",
+        "browser": "./lib/index.cjs",
+        "default": "./lib/node.cjs"
+      },
+      "default": {
+        "types": "./lib/index.d.mts",
+        "browser": "./lib/index.mjs",
+        "default": "./lib/node.mjs"
+      }
+    },
     "require": {
       "types": "./lib/index.d.mts",
       "browser": "./lib/index.cjs",
