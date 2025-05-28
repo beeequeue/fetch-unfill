@@ -40,10 +40,10 @@
     "fetch-unfill": "workspace:^"
   },
   "dependencies": {
-    "unplugin": "^2.3.4"
+    "unplugin": "^2.3.5"
   },
   "devDependencies": {
     "fetch-unfill": "workspace:^",
-    "tsdown": "0.11.9"
+    "tsdown": "0.12.4"
   }
 }
