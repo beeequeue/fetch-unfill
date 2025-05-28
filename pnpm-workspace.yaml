@@ -13,8 +13,6 @@ overrides:
   "@antfu/eslint-config>toml-eslint-parser": "-"
   "@antfu/eslint-config>vitest": "-"
   eslint-plugin-pnpm>jsonc-eslint-parser: "-"
-  eslint>@modelcontextprotocol/sdk: "-"
-  eslint>zod: "-"
   is-core-module: npm:@nolyfill/is-core-module@^1
   safe-buffer: npm:@nolyfill/safe-buffer@^1
 
