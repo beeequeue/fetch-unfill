@@ -44,6 +44,6 @@
   },
   "devDependencies": {
     "fetch-unfill": "workspace:^",
-    "tsdown": "0.12.4"
+    "tsdown": "0.12.5"
   }
 }
