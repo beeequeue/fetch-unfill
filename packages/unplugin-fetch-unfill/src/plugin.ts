@@ -1,3 +1,4 @@
+/* eslint-disable ts/no-unsafe-member-access,ts/no-unsafe-call,ts/no-unsafe-assignment */
 import type { InputOptions, MinimalPluginContext, Plugin } from "rollup"
 import { createUnplugin, type UnpluginInstance, type WebpackCompiler } from "unplugin"
 
@@ -109,7 +110,7 @@ export const fetchUnfillUnplugin: UnpluginInstance<
     },
 
     vite: {
-      config(config) {
+      config(config: any) {
         config.resolve ??= {}
         config.resolve.alias ??= {}
 

@@ -18,3 +18,4 @@ overrides:
 
 savePrefix: ""
 shellEmulator: true
+minimumReleaseAge: 0
