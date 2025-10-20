@@ -36,9 +36,9 @@ exports[`node-fetch > unfills it > unfilled cjs code 1`] = `"var e=(e,t)=>()=>(t
 
 exports[`node-fetch > unfills it > unfilled mjs code 1`] = `"const e=globalThis.fetch;globalThis.fetch.polyfill=!1,e.polyfill=!1;var t=e;const{Request:n,Response:r,Headers:i,AbortController:a}=globalThis;var o=()=>t(\`https://example.com\`);const s=()=>t(\`https://example.com\`);export{o as default,s as example};"`;
 
-exports[`node-fetch-native > bundles the original package > cjs 1`] = `"114.16KB"`;
+exports[`node-fetch-native > bundles the original package > cjs 1`] = `"114.85KB"`;
 
-exports[`node-fetch-native > bundles the original package > mjs 1`] = `"111.75KB"`;
+exports[`node-fetch-native > bundles the original package > mjs 1`] = `"112.49KB"`;
 
 exports[`node-fetch-native > unfills it > cjs 1`] = `"429B"`;
 
