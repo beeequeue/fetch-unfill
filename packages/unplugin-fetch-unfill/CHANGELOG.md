@@ -1,5 +1,12 @@
 # unplugin-fetch-unfill
 
+## 2.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`3b05c83`](https://github.com/beeequeue/fetch-unfill/commit/3b05c837cb6caf6965dc1bb975060f32fa88b1d7)]:
+  - fetch-unfill@0.2.1
+
 ## 2.0.0
 
 ### Patch Changes
