@@ -1,4 +1,5 @@
-/* eslint-disable ts/no-unsafe-member-access,ts/no-unsafe-call,ts/no-unsafe-assignment */
+/* eslint-disable ts/no-unsafe-member-access,ts/no-unsafe-assignment */
+
 import type { InputOptions, MinimalPluginContext, Plugin } from "rollup"
 import { createUnplugin, type UnpluginInstance, type WebpackCompiler } from "unplugin"
 
@@ -64,7 +65,8 @@ export const fetchUnfillUnplugin: UnpluginInstance<
     const existingPlugin = options.plugins.find(
       (plugin) =>
         (plugin as Plugin)?.name === "alias" ||
-        (plugin as Plugin)?.name === "builtin:alias",
+        (plugin as Plugin)?.name === "builtin:alias" ||
+        (plugin as Plugin)?.name === "builtin:vite-alias",
     ) as Plugin<AliasPluginConfig> | undefined
 
     if (existingPlugin != null) {
@@ -76,7 +78,7 @@ export const fetchUnfillUnplugin: UnpluginInstance<
     const aliasPlugin =
       framework === "rollup"
         ? ((await import("@rollup/plugin-alias")).default as unknown as AliasPlugin)
-        : ((await import("rolldown/experimental")).aliasPlugin as AliasPlugin)
+        : ((await import("rolldown/experimental")).viteAliasPlugin as AliasPlugin)
 
     options.plugins.unshift(
       aliasPlugin({

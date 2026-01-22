@@ -2,7 +2,7 @@ import path from "node:path"
 
 import fetchUnfillAliases, { rollupAliases } from "fetch-unfill/aliases"
 import { rolldown, type RolldownOptions } from "rolldown"
-import { aliasPlugin } from "rolldown/experimental"
+import { viteAliasPlugin } from "rolldown/experimental"
 import { describe, expect, it } from "vitest"
 
 import { createTester, sanitizePackageName } from "../utils.js"
@@ -12,7 +12,7 @@ const test = createTester("rollup", async (name: string, useAlias: boolean = fal
     logLevel: "silent",
     platform: "node",
     external: ["xmlhttprequest"],
-    plugins: [useAlias ? aliasPlugin({ entries: rollupAliases }) : null],
+    plugins: [useAlias ? viteAliasPlugin({ entries: rollupAliases }) : null],
   } satisfies RolldownOptions
 
   const cjs = await rolldown({
@@ -22,7 +22,7 @@ const test = createTester("rollup", async (name: string, useAlias: boolean = fal
     c.generate({
       format: "cjs",
       minify: true,
-      inlineDynamicImports: true,
+      codeSplitting: false,
     }),
   )
   expect(cjs.output).toHaveLength(1)
@@ -34,7 +34,7 @@ const test = createTester("rollup", async (name: string, useAlias: boolean = fal
     c.generate({
       format: "esm",
       minify: true,
-      inlineDynamicImports: true,
+      codeSplitting: false,
     }),
   )
   expect(mjs.output).toHaveLength(1)

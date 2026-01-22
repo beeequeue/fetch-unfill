@@ -2,7 +2,7 @@ import { Buffer } from "node:buffer"
 import path from "node:path"
 
 import { build, type RolldownOptions } from "rolldown"
-import { aliasPlugin } from "rolldown/experimental"
+import { viteAliasPlugin } from "rolldown/experimental"
 import { fetchUnfillUnplugin } from "unplugin-fetch-unfill"
 import { expect, it } from "vitest"
 
@@ -12,7 +12,7 @@ const options = {
   output: {
     format: "esm",
     minify: true,
-    inlineDynamicImports: true,
+    codeSplitting: false,
   },
   plugins: [fetchUnfillUnplugin.rolldown() as never],
 } satisfies RolldownOptions
@@ -21,7 +21,7 @@ it("errors when alias plugin is already registered", async () => {
   const promise = build({
     ...options,
     plugins: [
-      aliasPlugin({ entries: [{ find: "foo", replacement: "bar" }] }),
+      viteAliasPlugin({ entries: [{ find: "foo", replacement: "bar" }] }),
       ...options.plugins,
     ],
   })
