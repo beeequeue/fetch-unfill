@@ -14,5 +14,6 @@ export default defineConfig({
   platform: "node",
   format: ["cjs", "esm"],
   dts: true,
+  minify: "dce-only",
   fixedExtension: true,
 })

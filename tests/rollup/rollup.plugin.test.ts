@@ -32,9 +32,9 @@ it("errors when alias plugin is already registered", async () => {
   const promise = rollup({
     ...options,
     plugins: [
-      // @ts-expect-error: incorrect default export
       Alias({ entries: [{ find: "foo", replacement: "bar" }] }),
-      ...(options.plugins as unknown[]),
+      // eslint-disable-next-line ts/no-unsafe-assignment
+      ...(options.plugins as any[]),
     ],
   })
 

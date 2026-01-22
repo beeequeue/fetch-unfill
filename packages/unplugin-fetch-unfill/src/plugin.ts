@@ -1,7 +1,12 @@
 /* eslint-disable ts/no-unsafe-member-access,ts/no-unsafe-assignment */
 
 import type { InputOptions, MinimalPluginContext, Plugin } from "rollup"
-import { createUnplugin, type UnpluginInstance, type WebpackCompiler } from "unplugin"
+import {
+  createUnplugin,
+  type RspackCompiler,
+  type UnpluginInstance,
+  type WebpackCompiler,
+} from "unplugin"
 
 type FetchUnfillOptions = {
   nodeFetch?: boolean
@@ -32,7 +37,9 @@ export const fetchUnfillUnplugin: UnpluginInstance<
   if (options?.whatwgFetch === false) delete (replacements as Rplc)["whatwg-fetch"]
   if (options?.unfetch === false) delete (replacements as Rplc).unfetch
 
-  const webpackConfigurer = (compiler: Pick<WebpackCompiler, "options">) => {
+  const webpackConfigurer = (
+    compiler: Pick<WebpackCompiler | RspackCompiler, "options">,
+  ) => {
     compiler.options.resolve.alias ??= {}
 
     for (const pkg in replacements) {

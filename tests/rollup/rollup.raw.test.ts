@@ -24,8 +24,7 @@ const test = createTester("rollup", async (name: string, useAlias: boolean = fal
         preferBuiltins: true,
       }),
       useAlias
-        ? // @ts-expect-error: Incorrect default export
-          Alias({
+        ? Alias({
             entries: rollupAliases,
           })
         : null,
