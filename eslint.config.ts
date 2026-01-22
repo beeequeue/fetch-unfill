@@ -1,48 +1,17 @@
 import antfu from "@antfu/eslint-config"
 
-const sortImports = {
-  "perfectionist/sort-imports": [
-    "error",
-    {
-      type: "natural",
-      internalPattern: ["^@/", "^~/", "^#[a-zA-Z0-9-]+/"],
-      newlinesBetween: "always",
-      groups: [
-        ["builtin", "builtin-type"],
-        ["external", "external-type"],
-        ["internal", "internal-type"],
-        ["parent", "parent-type"],
-        ["sibling", "sibling-type"],
-        ["index", "index-type"],
-        "object",
-        "unknown",
-      ],
-    },
-  ],
-}
-
 export default antfu({
-  ignores: ["**/*.json", "aliases.d.mts"],
+  ignores: ["**/*.json"],
   markdown: false,
   stylistic: false,
   jsonc: false,
   jsx: false,
+  pnpm: false,
   toml: false,
   test: { overrides: { "test/no-import-node-test": "off" } },
   typescript: {
     tsconfigPath: "tsconfig.json",
     ignoresTypeAware: ["copy.ts", "*.config.*"],
-
-    overridesTypeAware: {
-      "ts/no-floating-promises": [
-        "error",
-        {
-          allowForKnownSafeCalls: [
-            { from: "package", package: "node:test", name: ["describe", "it", "test"] },
-          ],
-        },
-      ],
-    },
 
     overrides: {
       "no-console": "off",
@@ -59,7 +28,23 @@ export default antfu({
       "ts/no-use-before-define": "off",
       "unused-imports/no-unused-vars": "off",
 
-      ...sortImports,
+      "perfectionist/sort-imports": [
+        "error",
+        {
+          type: "natural",
+          internalPattern: ["^@/", "^~/", "^#[a-zA-Z0-9-]+/"],
+          newlinesBetween: 1,
+          groups: [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+            "unknown",
+          ],
+        },
+      ],
     },
   },
 })

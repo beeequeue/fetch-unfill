@@ -4,25 +4,19 @@
     // Output
     "noEmit": true,
     "sourceMap": true,
-    "composite": true,
-    "isolatedDeclarations": true,
-    "tsBuildInfoFile": "node_modules/.cache/typescript/.tsbuildinfo",
 
     // Modules
-    "baseUrl": "./src",
+    "allowImportingTsExtensions": true,
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     },
 
     // Lessen strictness
-    "importsNotUsedAsValues": "remove",
     "noImplicitReturns": false,
     "noPropertyAccessFromIndexSignature": false,
     "noUncheckedIndexedAccess": false,
     "exactOptionalPropertyTypes": false,
     "verbatimModuleSyntax": true,
-    "allowJs": false,
-    "checkJs": false,
 
     // Extra types
     "types": ["node"]
