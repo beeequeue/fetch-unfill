@@ -1,5 +1,11 @@
 # fetch-unfill
 
+## 0.2.1
+
+### Patch Changes
+
+- [`3b05c83`](https://github.com/beeequeue/fetch-unfill/commit/3b05c837cb6caf6965dc1bb975060f32fa88b1d7) Thanks [@beeequeue](https://github.com/beeequeue)! - Added `unfetch`, `whatwg-fetch`, `@supabase/node-fetch` to default aliases
+
 ## 0.2.0
 
 ### Minor Changes
